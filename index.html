@@ -6,16 +6,7 @@
     <title>Portfolio ni Lian</title>
 </head>
 <body>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-        </ul>
-    </nav>
-    
+   
     <div style="display: flex;">
 
         <!-- Sidebar -->
@@ -24,11 +15,13 @@
             <!-- Profile Picture -->
             <img src="lian-luigi-paredes.jpg" 
             alt="Profile Picture" 
-            style="width: 80px; border: 1px solid black; height: 80px; border-radius: 50%;">
+            style="width: 80px; border: 1px solid black; height: 80px; border-radius: 50%; display: block; margin: 0 auto;"/>
 
-            <h2>Hello, I'm Lian!</h2>
-            <p>Data Scientist Enthusiast | UI/UX Designer | Front-End Developer | Graphics Designer </p>
-
+            <center>
+                <h2>Hello, I'm Lian!</h2>
+                <p>Data Scientist Enthusiast | UI/UX Designer | Front-End Developer | Graphics Designer </p>
+            </center>
+            
             <hr />
 
             <ul> 
@@ -45,20 +38,35 @@
                     <p>Quezon City, Philippines</p>
                 </li>
             </ul>
+       
         </aside>
-    </div>
 
+        <!-- Main Content -->
         <main>
-            <main style="padding: 16px;">
+            <main style="padding: 16px; flex: 1;">
+
+                <!-- Navigation -->
+
+                <nav>
+                    <ul style="list-style: none; display: flex; gap: 16px; justify-content: flex-end; padding: 0; margin: 0;">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                    </ul>
+                </nav>
+
+
+                <hr />
 
             <section id="about">
                 <h1>Portfolio ni Lian</h1>
                 <h2>About Me</h2>
                 <p>Hi! I'm Lian, a passionate Data Scientist, UI/UX Designer, Graphics Designer, and Front-End Developer. I love creating innovative solutions and designing user-friendly interfaces. With a learning background in data analysis and web development, I strive to deliver impactful results in every project I undertake.
                 </p>
-        </section>
+            </section>
 
-        </main>
+            </main>
 
         </div>
     </body>
