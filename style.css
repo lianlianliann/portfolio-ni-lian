@@ -174,3 +174,34 @@ body {
     border-top: 1px solid var(--border);
     margin: 16px 0;
 }
+
+/* ABOUT SECTION */
+.section {
+    padding: 16px 0;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 32px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    display: inline-block;
+    border-bottom: 3px solid var(--accent);
+}
+
+.section p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 720px;
+    margin-top: 12px;
+}
