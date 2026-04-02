@@ -1,4 +1,6 @@
-/* CSS VARIABLES (THEME COLORS) */
+/* ================================
+   CSS VARIABLES (THEME COLORS)
+================================ */
 :root {
     --bg-main: #1a1a1a;
     --bg-sidebar: #222222;
@@ -9,7 +11,9 @@
     --border: #333333;
 }
 
-/* RESET & BASE STYLES */
+/* ================================
+   RESET & BASE STYLES
+================================ */
 * {
     margin: 0;
     padding: 0;
@@ -26,9 +30,11 @@ body {
     color: var(--text-primary);
 }
 
-/* LAYOUT */
+/* ================================
+   LAYOUT
+================================ */
 .layout-wrapper {
-    display:flex;
+    display: flex;
     min-height: 100vh;
 }
 
@@ -51,7 +57,9 @@ body {
     padding: 24px 32px;
 }
 
-/* SIDEBAR */
+/* ================================
+   SIDEBAR
+================================ */
 .profile-pic {
     width: 120px;
     height: 120px;
@@ -130,12 +138,13 @@ body {
     margin: 0;
 }
 
-/* Navigation */
+/* ================================
+   NAVIGATION
+================================ */
 .navbar {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 12px 0;
     background-color: var(--bg-sidebar);
     border-radius: 8px;
     padding: 12px 24px;
@@ -175,7 +184,9 @@ body {
     margin: 16px 0;
 }
 
-/* ABOUT SECTION */
+/* ================================
+   SECTIONS (SHARED)
+================================ */
 .section {
     padding: 16px 0;
 }
@@ -206,7 +217,9 @@ body {
     margin-top: 12px;
 }
 
-/* WHAT I DO */
+/* ================================
+   WHAT I DO CARDS
+================================ */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -242,7 +255,9 @@ body {
     margin: 0;
 }
 
-/* TECH STACK */
+/* ================================
+   TECHNICAL SKILLS
+================================ */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -290,4 +305,148 @@ body {
 
 .skill-category ul li:hover {
     color: var(--text-primary);
+}
+
+/* ================================
+   DOWNLOAD BUTTON
+================================ */
+.download-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--accent);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   PAGE TITLE WRAPPER
+================================ */
+.page-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 720px;
+    margin-bottom: 8px;
+}
+
+.page-title-wrapper .download-btn {
+    font-size: 12px;
+    padding: 6px 16px;
+    margin: 0;
+}
+
+/* ================================
+   EDUCATION & EXPERIENCE TIMELINE
+================================ */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    max-width: 720px;
+    border-left: 2px solid var(--border);
+    padding-left: 24px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 32px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    left: -30.5px;
+    top: 1px;
+}
+
+.timeline-content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.timeline-date {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.timeline-content p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+/* ================================
+   AFFILIATIONS & ORGANIZATIONS
+================================ */
+.affiliations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+    max-width: 720px;
+}
+
+.affiliation-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.affiliation-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.affiliation-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.affiliation-role {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.affiliation-date {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.affiliation-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
 }
