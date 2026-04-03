@@ -570,3 +570,14 @@ body {
     background-color: var(--accent);
     border-color: var(--accent);
 }
+
+/* ================================
+   CERTIFICATIONS BASE
+================================ */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+    max-width: 720px;
+}
