@@ -581,3 +581,36 @@ body {
     margin-top: 24px;
     max-width: 720px;
 }
+
+/* ================================
+   CERTIFICATIONS CARDS
+================================ */
+.cert-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cert-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.cert-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.cert-issuer {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 0;
+}
