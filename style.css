@@ -673,3 +673,48 @@ body {
     color: var(--text-secondary);
     margin: 0;
 }
+
+/* ================================
+   HIRE ME BASE
+================================ */
+.work-together {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    max-width: 720px;
+}
+
+/* ================================
+   AVAILABILITY STATUS
+================================ */
+.availability-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    max-width: 720px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.availability-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.availability-dot {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+.availability-item p {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin: 0;
+}
