@@ -835,3 +835,34 @@ body {
     border-color: var(--accent);
     color: var(--accent);
 }
+
+/* ================================
+   MODE TOGGLE BUTTON
+================================ */
+[data-theme="light"] {
+    --bg-main: #f4f4f9;
+    --bg-sidebar: #ffffff;
+    --bg-card: #ffffff;
+    --text-primary: #222222;
+    --text-secondary: #555555;
+    --accent: #e86830;
+    --border: #cccccc;
+}
+
+.theme-btn {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-btn:hover {
+    border-color: var(--accent);
+}
