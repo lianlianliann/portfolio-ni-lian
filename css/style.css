@@ -159,33 +159,39 @@ body {
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 40px; 
+    gap: 12px; 
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 8px;
+    gap: 4px; 
     margin: 0;
-    padding: 8px 16px;
-    background-color: var(--bg-card);
+    padding: 6px; 
+    background-color: var(--bg-card); 
     border: 1px solid var(--border);
-    border-radius: 30px; /* Pill shape */
+    border-radius: 40px; 
 }
 
 .nav-links li a {
     text-decoration: none;
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: 13px; 
     font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: color 0.2s ease, background-color 0.2s ease;
+    padding: 10px 20px; 
+    border-radius: 30px; 
+    transition: all 0.3s ease; 
 }
 
-.nav-links li a:hover,
+.nav-links li a:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-main); 
+}
+
 .nav-links li a.active {
-    color: var(--accent);
-    background-color: var(--bg-main); /* Pop-out effect for active page */
+    color: var(--text-primary); 
+    background-color: var(--border); 
+    font-weight: 600; 
 }
 
 .nav-divider {
@@ -858,18 +864,19 @@ body {
 
 .theme-btn {
     background-color: var(--bg-card);
-    color: var(--text-primary);
+    color: var(--text-secondary);
     border: 1px solid var(--border);
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 30px; /* Matches the nav links pill */
     cursor: pointer;
-    margin-left: 16px;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
-    font-weight: 600;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 0; /* Remove the old left margin since we use gap in navbar */
 }
 
 .theme-btn:hover {
-    border-color: var(--accent);
+    color: var(--text-primary);
+    background-color: var(--border);
 }
