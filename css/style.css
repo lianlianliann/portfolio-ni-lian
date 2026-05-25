@@ -942,6 +942,7 @@ body, .sidebar, .main-content, .card, .cert-card, .skill-category, .form-input, 
     max-width: 720px;
     display: flex;
     justify-content: center;
+    padding: 20px 0; 
 }
 
 .carousel-track {
@@ -953,6 +954,7 @@ body, .sidebar, .main-content, .card, .cert-card, .skill-category, .form-input, 
 
 .carousel-item {
     opacity: 0.3;
+    transform: scale(0.85); 
     transition: opacity 0.5s ease, transform 0.5s ease;
     display: flex;
     align-items: center;
@@ -966,5 +968,5 @@ body, .sidebar, .main-content, .card, .cert-card, .skill-category, .form-input, 
 
 .carousel-item.active {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.50); 
 }
