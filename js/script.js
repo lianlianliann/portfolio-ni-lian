@@ -78,4 +78,35 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCenter();
         setInterval(rotateCarouselRight, 2500);
     }
+
+    // ==========================================
+    // 4. SKILLS ACCORDION
+    // ==========================================
+    const accordions = document.querySelectorAll('.skill-category');
+
+    if (accordions.length > 0) {
+        accordions.forEach((acc, index) => {
+            const header = acc.querySelector('h3');
+            const ul = acc.querySelector('ul');
+
+            if (index === 0) {
+                acc.classList.add('active');
+                ul.style.maxHeight = ul.scrollHeight + 'px';
+            }
+
+            header.addEventListener('click', () => {
+                const isActive = acc.classList.contains('active');
+
+                accordions.forEach(otherAcc => {
+                    otherAcc.classList.remove('active');
+                    otherAcc.querySelector('ul').style.maxHeight = '0px';
+                });
+
+                if (!isActive) {
+                    acc.classList.add('active');
+                    ul.style.maxHeight = ul.scrollHeight + 'px';
+                }
+            });
+        });
+    }
 });
