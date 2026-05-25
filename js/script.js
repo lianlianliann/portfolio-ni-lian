@@ -49,4 +49,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(typeWriter, 500); 
     }
+    // ==========================================
+    // 3. TECH STACK CAROUSEL
+    // ==========================================
+    const track = document.getElementById('carousel-track');
+
+    if (track) {
+        function rotateCarouselRight() {
+            const lastItem = track.lastElementChild;
+            
+            track.style.transition = 'none';
+            track.prepend(lastItem);
+            track.style.transform = 'translateX(-100px)';
+            
+            setTimeout(() => {
+                track.style.transition = 'transform 0.5s ease';
+                track.style.transform = 'translateX(0)';
+                updateCenter();
+            }, 50);
+        }
+
+        function updateCenter() {
+            const items = track.children;
+            Array.from(items).forEach(item => item.classList.remove('active'));
+            items[2].classList.add('active');
+        }
+
+        updateCenter();
+        setInterval(rotateCarouselRight, 2500);
+    }
 });
