@@ -103,7 +103,7 @@ body {
     display: inline-block;
     font-size: 11px;
     color: var(--text-primary);
-    background-color: var(--bg-main); 
+    background-color: var(--bg-card); 
     border: 1px solid var(--border);
     padding: 8px 12px;
     border-radius: 8px;
@@ -746,19 +746,24 @@ body {
    CERTIFICATIONS CARDS
 ================================ */
 .cert-card {
-    background-color: var(--bg-card);
+    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-sidebar) 100%);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px; /* Matched to 16px to stay consistent with other cards */
+    padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
+.cert-card.visible:hover,
 .cert-card:hover {
+    transform: translateY(-6px);
     border-color: var(--accent);
-    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .cert-title {
