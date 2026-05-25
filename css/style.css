@@ -930,3 +930,41 @@ body, .sidebar, .main-content, .card, .cert-card, .skill-category, .form-input, 
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* ================================
+   TECH STACK CAROUSEL
+================================ */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    max-width: 720px;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: max-content;
+}
+
+.carousel-item {
+    opacity: 0.3;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item img {
+    width: 60px;
+    height: 60px;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
