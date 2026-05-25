@@ -87,10 +87,19 @@
 
                 <div class="contact-form">
                     <div class="form-row">
-                        <input type="text" class="form-input" placeholder="Your Name" />
-                        <input type="email" class="form-input" placeholder="Your Email Address" />
+                        <div class="input-wrapper">
+                            <small class="error-text">Please enter your name.</small>
+                            <input type="text" class="form-input" placeholder="Your Name" />
+                        </div>
+                        <div class="input-wrapper">
+                            <small class="error-text">Please enter a valid email.</small>
+                            <input type="email" class="form-input" placeholder="Your Email Address" />
+                        </div>
                     </div>
-                    <textarea class="form-textarea" placeholder="Tell me about your project or inquiry..."></textarea>
+                    <div class="input-wrapper">
+                        <small class="error-text">Please write a message.</small>
+                        <textarea class="form-textarea" placeholder="Tell me about your project or inquiry..."></textarea>
+                    </div>
                     <button class="form-submit">Submit</button>
                 </div>
 

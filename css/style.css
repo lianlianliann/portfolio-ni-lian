@@ -1029,3 +1029,66 @@ body, .sidebar, .main-content, .card, .cert-card, .skill-category, .form-input, 
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ================================
+   TOAST NOTIFICATION
+================================ */
+.toast-notification {
+    position: fixed;
+    bottom: 20px;
+    right: -350px;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-left: 4px solid var(--accent);
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 1000;
+    transition: right 0.4s ease;
+}
+
+.toast-notification.show {
+    right: 20px;
+}
+
+.toast-notification.success {
+    border-left-color: #28a745;
+}
+
+.toast-notification.error {
+    border-left-color: var(--accent);
+}
+
+/* ================================
+   INLINE FORM VALIDATION
+================================ */
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.error-text {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 4px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease, opacity 0.2s ease, margin-bottom 0.2s ease;
+}
+
+
+.input-wrapper.error .error-text {
+    max-height: 20px;
+    opacity: 1;
+    margin-bottom: 6px; 
+}
+
+.input-wrapper.error .form-input,
+.input-wrapper.error .form-textarea {
+    border-color: var(--accent);
+}
