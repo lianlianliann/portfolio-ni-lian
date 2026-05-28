@@ -1,3 +1,10 @@
+<?php
+require_once 'db.php'; 
+
+$stmt = $pdo->query("SELECT * FROM certifications ORDER BY id DESC");
+$certifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,67 +105,21 @@
                 <h1 class="page-title">Certifications</h1>
 
                 <div class="certifications-grid">
-
-                    <!-- CERTIFICATION 1 -->
-                    <div class="cert-card fade-in">
-                        <div class="cert-header">
-                            <span class="cert-category">GitHub</span>
-                        </div>
-                        <a href="#" target="_blank" class="cert-image-link">
-                            <div class="cert-image-placeholder">
-                                <p>Certificate Image</p>
+                    <?php foreach ($certifications as $cert): ?>
+                        <div class="cert-card fade-in">
+                            <div class="cert-header">
+                                <span class="cert-category"><?php echo htmlspecialchars($cert['category']); ?></span>
                             </div>
-                        </a>
-                        <h3 class="cert-title">GitHub Foundational Skills</h3>
-                        <p class="cert-issuer">DataCamp</p>
-                        <p class="cert-date">January 2026</p>
-                    </div>
-
-                    <!-- CERTIFICATION 2 -->
-                    <div class="cert-card fade-in">
-                        <div class="cert-header">
-                            <span class="cert-category">Data Science</span>
+                            <a href="#" target="_blank" class="cert-image-link">
+                                <div class="cert-image-placeholder">
+                                    <p>Certificate Image</p>
+                                </div>
+                            </a>
+                            <h3 class="cert-title"><?php echo htmlspecialchars($cert['title']); ?></h3>
+                            <p class="cert-issuer"><?php echo htmlspecialchars($cert['issuer']); ?></p>
+                            <p class="cert-date"><?php echo htmlspecialchars($cert['cert_date']); ?></p>
                         </div>
-                        <a href="#" target="_blank" class="cert-image-link">
-                            <div class="cert-image-placeholder">
-                                <p>Certificate Image</p>
-                            </div>
-                        </a>
-                        <h3 class="cert-title">Introduction to Data Science</h3>
-                        <p class="cert-issuer">Cisco</p>
-                        <p class="cert-date">April 2026</p>
-                    </div>
-
-                    <!-- CERTIFICATION 3 -->
-                    <div class="cert-card fade-in">
-                        <div class="cert-header">
-                            <span class="cert-category">Cloud</span>
-                        </div>
-                        <a href="#" target="_blank" class="cert-image-link">
-                            <div class="cert-image-placeholder">
-                                <p>Certificate Image</p>
-                            </div>
-                        </a>
-                        <h3 class="cert-title">AWS Cloud Practitioner (CLF-C02)</h3>
-                        <p class="cert-issuer">DataCamp</p>
-                        <p class="cert-date">March 2026</p>
-                    </div>
-
-                    <!-- CERTIFICATION 4 -->
-                    <div class="cert-card fade-in">
-                        <div class="cert-header">
-                            <span class="cert-category">Game Development</span>
-                        </div>
-                        <a href="#" target="_blank" class="cert-image-link">
-                            <div class="cert-image-placeholder">
-                                <p>Certificate Image</p>
-                            </div>
-                        </a>
-                        <h3 class="cert-title">Eidolon — 3rd Place &amp; Dreamwhisper Mechanism Award</h3>
-                        <p class="cert-issuer">PUP Programmers' Guild</p>
-                        <p class="cert-date">October 2025</p>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
 
             </section>

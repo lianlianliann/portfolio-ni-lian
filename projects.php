@@ -1,3 +1,10 @@
+<?php
+require_once 'db.php'; 
+
+$stmt = $pdo->query("SELECT * FROM projects ORDER BY id DESC");
+$projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,87 +106,27 @@
                 <h1 class="page-title">Projects</h1>
 
                 <div class="projects-grid">
-
-                    <div class="project-card fade-in">
-                        <a href="#" class="project-link">
-                            <div class="project-image-wrapper">
-                                <div class="project-image-placeholder">
-                                    <p>Project Screenshot</p>
-                                </div>
-                                <div class="project-overlay">
-                                    <div class="eye-icon-wrapper">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <?php foreach ($projects as $project): ?>
+                        <div class="project-card fade-in">
+                            <a href="#" class="project-link">
+                                <div class="project-image-wrapper">
+                                    <div class="project-image-placeholder">
+                                        <p>Project Screenshot</p>
+                                    </div>
+                                    <div class="project-overlay">
+                                        <div class="eye-icon-wrapper">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="project-info">
-                                <span class="project-meta">Data Science &bull; Jan 2026</span>
-                                <h2>Project Title One</h2>
-                                <p>A brief description of the project and its features. Built focusing on accurate models and clean data workflows.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="project-card fade-in">
-                        <a href="#" class="project-link">
-                            <div class="project-image-wrapper">
-                                <div class="project-image-placeholder">
-                                    <p>Project Screenshot</p>
+                                <div class="project-info">
+                                    <span class="project-meta"><?php echo htmlspecialchars($project['category']); ?> &bull; <?php echo htmlspecialchars($project['project_date']); ?></span>
+                                    <h2><?php echo htmlspecialchars($project['title']); ?></h2>
+                                    <p><?php echo htmlspecialchars($project['description']); ?></p>
                                 </div>
-                                <div class="project-overlay">
-                                    <div class="eye-icon-wrapper">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <span class="project-meta">Development &bull; Nov 2025</span>
-                                <h2>Project Title Two</h2>
-                                <p>A brief description of the project and its features. Structured with modern front-end practices and responsive design.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="project-card fade-in">
-                        <a href="#" class="project-link">
-                            <div class="project-image-wrapper">
-                                <div class="project-image-placeholder">
-                                    <p>Project Screenshot</p>
-                                </div>
-                                <div class="project-overlay">
-                                    <div class="eye-icon-wrapper">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <span class="project-meta">UI/UX Design &bull; Sep 2025</span>
-                                <h2>Project Title Three</h2>
-                                <p>A brief description of the project and its features. Designed for optimal user experience and aesthetic appeal.</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="project-card fade-in">
-                        <a href="#" class="project-link">
-                            <div class="project-image-wrapper">
-                                <div class="project-image-placeholder">
-                                    <p>Project Screenshot</p>
-                                </div>
-                                <div class="project-overlay">
-                                    <div class="eye-icon-wrapper">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <span class="project-meta">Game Dev &bull; Oct 2025</span>
-                                <h2>Eidolon</h2>
-                                <p>Award-winning game development project featuring innovative mechanics and immersive gameplay.</p>
-                            </div>
-                        </a>
-                    </div>
-
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </section>
 
