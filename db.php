@@ -12,7 +12,6 @@ try {
     // Set PDO error mode to exception so we can easily spot bugs
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    echo "Connected successfully to the warehouse!"; 
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
     die(); 
