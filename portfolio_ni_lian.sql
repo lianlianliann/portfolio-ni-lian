@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2026 at 04:23 PM
+-- Generation Time: May 28, 2026 at 04:42 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -65,7 +65,7 @@ CREATE TABLE `projects` (
 
 INSERT INTO `projects` (`id`, `title`, `category`, `project_date`, `description`) VALUES
 (1, 'Project Title One', 'Data Science', 'Jan 2026', 'A brief description of the project and its features. Built focusing on accurate models and clean data workflows.'),
-(3, 'Project Title Three', 'UI/UX Design', 'Sep 2025', 'A brief description of the project and its features. Designed for optimal user experience and aesthetic appeal.'),
+(3, 'Project Title Three', 'UI/UX Design', 'Sept 2025', 'A brief description of the project and its features. Designed for optimal user experience and aesthetic appeal.'),
 (4, 'Eidolon', 'Game Dev', 'Oct 2025', 'Award-winning game development project featuring innovative mechanics and immersive gameplay.'),
 (5, 'IskolarAlert', 'Web Development', 'February 2026', 'UI/UX, Front-End');
 
@@ -93,13 +93,13 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `certifications`
 --
 ALTER TABLE `certifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
