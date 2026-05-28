@@ -78,11 +78,11 @@
             <!-- NAVIGATION -->
             <nav class="navbar">
                 <ul class="nav-links">
-                    <li><a href="index.html">About</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="certifications.html">Certifications</a></li>
-                    <li><a href="hire-me.html" class="active">Hire Me</a></li>
+                    <li><a href="index.php">About</a></li>
+                    <li><a href="resume.php">Resume</a></li>
+                    <li><a href="projects.php">Projects</a></li>
+                    <li><a href="certifications.php">Certifications</a></li>
+                    <li><a href="hire-me.php" class="active">Hire Me</a></li>
                 </ul>
                 <button id="theme-toggle" class="theme-switch" aria-label="Toggle Theme">
                     <span class="switch-thumb"></span>
