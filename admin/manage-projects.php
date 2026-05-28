@@ -1,20 +1,14 @@
 <?php
-require_once 'db.php';
+require_once '../db.php'; // PATH FIXED
 
-// Handle the DELETE Operation securely
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    
-    // Using a prepared statement (?) to prevent SQL injection
     $stmt = $pdo->prepare("DELETE FROM projects WHERE id = ?");
     $stmt->execute([$id]);
-    
-    // Redirect back to the dashboard smoothly
     header("Location: manage-projects.php"); 
     exit;
 }
 
-// Fetch all projects to display in the table
 $stmt = $pdo->query("SELECT * FROM projects ORDER BY id DESC");
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -23,8 +17,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Manage Projects</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
+    <link rel="stylesheet" href="../css/style.css"> <style>
         .admin-container { max-width: 900px; margin: 40px auto; padding: 30px; background: var(--bg-sidebar); border-radius: 16px; border: 1px solid var(--border); }
         .admin-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         .admin-table th, .admin-table td { padding: 14px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text-primary); }
@@ -68,7 +61,6 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </table>
         
         <br><br>
-        <a href="projects.php" style="color: var(--text-secondary); text-decoration: none;">&larr; Back to Public Portfolio</a>
-    </div>
+        <a href="../projects.php" style="color: var(--text-secondary); text-decoration: none;">&larr; Back to Public Portfolio</a> </div>
 </body>
 </html>

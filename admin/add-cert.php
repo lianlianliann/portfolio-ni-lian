@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+require_once '../db.php'; // PATH FIXED
 
 $error = '';
 
@@ -25,8 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Add Certification</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
+    <link rel="stylesheet" href="../css/style.css"> <style>
         .admin-container { max-width: 600px; margin: 60px auto; padding: 40px; background: var(--bg-sidebar); border-radius: 16px; border: 1px solid var(--border); }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; color: var(--text-secondary); }
