@@ -138,32 +138,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 6. FORM VALIDATION (INLINE ERRORS & SUCCESS TOAST)
+    // 6. FORM VALIDATION (INLINE ERRORS)
     // ==========================================
+    const form = document.querySelector('.contact-form');
     const submitBtn = document.querySelector('.form-submit');
 
-    if (submitBtn) {
-        // Create only the Success Toast
-        const toast = document.createElement('div');
-        toast.className = 'toast-notification success';
-        document.body.appendChild(toast);
-
-        function showSuccessToast(message) {
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-        }
-
+    if (form && submitBtn) {
         submitBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            const nameInput = document.querySelector('input[placeholder="Your Name"]');
-            const emailInput = document.querySelector('input[placeholder="Your Email Address"]');
-            const messageInput = document.querySelector('.form-textarea');
+            const nameInput = document.querySelector('input[name="name"]');
+            const emailInput = document.querySelector('input[name="email"]');
+            const messageInput = document.querySelector('textarea[name="message"]');
 
             let isValid = true;
 
-            // Helper function to toggle the error class on the wrapper
             function validateField(input, isInvalid) {
                 if (!input) return;
                 const wrapper = input.parentElement;
@@ -175,16 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // 1. Check if empty
             validateField(nameInput, nameInput.value.trim() === '');
             validateField(messageInput, messageInput.value.trim() === '');
-
-            // 2. Check email format specifically
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             validateField(emailInput, !emailRegex.test(emailInput.value));
 
             if (!isValid) {
-                // Shake button to indicate failure
+                e.preventDefault(); 
+                
                 submitBtn.style.transition = 'none';
                 submitBtn.style.transform = 'translateX(-5px)';
                 setTimeout(() => submitBtn.style.transform = 'translateX(5px)', 50);
@@ -192,22 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => submitBtn.style.transform = 'translateX(0)', 150);
                 setTimeout(() => submitBtn.style.transition = 'opacity 0.2s ease, transform 0.2s ease', 200);
             } else {
-                // Success State
-                showSuccessToast('Message sent successfully! I will get back to you soon.');
-                submitBtn.textContent = 'Sent!';
-                submitBtn.style.backgroundColor = '#28a745'; 
-
-                // Clear inputs
-                [nameInput, emailInput, messageInput].forEach(input => { 
-                    if (input) input.value = ''; 
-                    if (input) input.parentElement.classList.remove('error'); // Ensure errors stay cleared
-                });
-
-                // Reset button
-                setTimeout(() => {
-                    submitBtn.textContent = 'Submit';
-                    submitBtn.style.backgroundColor = 'var(--accent)';
-                }, 3000);
+                submitBtn.textContent = 'Sending...';
             }
         });
     }

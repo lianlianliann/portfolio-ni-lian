@@ -101,23 +101,23 @@
                 <h2 class="section-title">Send Me a Message</h2>
                 <p>Have a project in mind or want to collaborate? Fill out the form below and I'll get back to you as soon as possible.</p>
 
-                <div class="contact-form">
+                <form action="https://formspree.io/f/xaqkarvp" method="POST" class="contact-form">
                     <div class="form-row">
                         <div class="input-wrapper">
                             <small class="error-text">Please enter your name.</small>
-                            <input type="text" class="form-input" placeholder="Your Name" />
+                            <input type="text" name="name" class="form-input" placeholder="Your Name" required />
                         </div>
                         <div class="input-wrapper">
                             <small class="error-text">Please enter a valid email.</small>
-                            <input type="email" class="form-input" placeholder="Your Email Address" />
+                            <input type="email" name="email" class="form-input" placeholder="Your Email Address" required />
                         </div>
                     </div>
                     <div class="input-wrapper">
                         <small class="error-text">Please write a message.</small>
-                        <textarea class="form-textarea" placeholder="Tell me about your project or inquiry..."></textarea>
+                        <textarea name="message" class="form-textarea" placeholder="Tell me about your project or inquiry..." required></textarea>
                     </div>
-                    <button class="form-submit">Submit</button>
-                </div>
+                    <button type="submit" class="form-submit">Submit</button>
+                </form>
 
                 <!-- LET'S WORK TOGETHER -->
                 <h2 class="section-title">Let's Build Something Together</h2>
